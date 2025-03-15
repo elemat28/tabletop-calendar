@@ -1,0 +1,2 @@
+add_subdirectory(timedateservice)
+add_subdirectory(main)
