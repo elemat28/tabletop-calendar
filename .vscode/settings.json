@@ -58,6 +58,17 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "cinttypes": "cpp",
+        "epd_7in3f.c": "cpp",
+        "displayservice.h": "c",
+        "epd_7in3f.h": "c",
+        "dev_config.h": "c",
+        "cassert": "cpp",
+        "stdio.h": "c",
+        "bcm2835.h": "c",
+        "epd_test.h": "c"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/aarch64-linux-gnu-g++",
+
 }
