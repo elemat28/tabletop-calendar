@@ -18,8 +18,42 @@ int display_init(){
     
     return 0;
 }
+/**
+ * @brief align text in as box 
+ * 
+ * @todo account for text wrapping
+ * 
+ * @param boxWidthPX 
+ * @param boxHeightPX 
+ * @param startX 
+ * @param startY 
+ * @param text 
+ * @param Font 
+ * @param Color_Font 
+ * @param Color_Background 
+ * @param centerHorizontal 
+ * @param centerVertical 
+ */
+void center_text_in_box(uint16_t boxWidthPX, uint16_t boxHeightPX, uint16_t startX, uint16_t startY, char* text,  sFONT *Font, uint16_t Color_Font, uint16_t Color_Background, bool centerHorizontal, bool centerVertical){
+    int marginPX = 2;
+    int lenOfText = strlen(text);
+    cursor.X = startX + marginPX;
+    cursor.Y = startY + marginPX;
+    if(centerHorizontal){
+        cursor.X += (boxWidthPX - Font->Width*lenOfText + marginPX) / 2;
+    } else {
+        cursor.X += marginPX;
+    };
+    if(centerVertical){
+        cursor.Y += (boxHeightPX - Font->Height + marginPX) / 2;
+    } else {
+        cursor.Y += marginPX;
+    };
+    Paint_DrawString_EN(cursor.X, cursor.Y, text, Font, Color_Background, Color_Font);
 
-void paint_month_grid_header(uint16_t boxWidthPX, uint16_t boxHeightPX, uint16_t startX, uint16_t startY,  sFONT *Font, uint16_t Color_Foreground, uint16_t Color_Background, bool centerText){
+}
+
+void paint_month_grid_header(uint16_t boxWidthPX, uint16_t boxHeightPX, uint16_t startX, uint16_t startY, sFONT *Font, uint16_t Color_Foreground, uint16_t Color_Background, bool centerText){
     cursor.X = startX;
     cursor.Y = startY - boxHeightPX - 2;
     Paint_DrawRectangle(cursor.X, cursor.Y, cursor.X+boxWidthPX*7 - 2, startY, Color_Background, DOT_PIXEL_2X2, DRAW_FILL_FULL);

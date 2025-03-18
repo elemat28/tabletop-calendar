@@ -54,7 +54,9 @@ if((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
     Paint_Clear(EPD_7IN3F_WHITE);
     printf("Paint_draw\r\n");
     paint_month_grid(DOW_WIDTH, DOW_HEIGHT, DOW_COLUMNS, DOW_ROWS, 0,DOW_GRID_Y_OFFSET);
-    paint_month_grid_header(DOW_WIDTH, DOW_HEIGHT/2,0,DOW_GRID_Y_OFFSET, &Font24, EPD_7IN3F_WHITE, EPD_7IN3F_BLACK, true);
+    paint_month_grid_header(DOW_WIDTH, DOW_GRID_HEADER_HEIGHT, 0, DOW_GRID_Y_OFFSET, &Font24, EPD_7IN3F_WHITE, EPD_7IN3F_BLACK, true);
+    char monthName[] = "December";
+    center_text_in_box(DOW_GRID_WIDTH, DOW_GRID_Y_OFFSET-DOW_GRID_HEADER_HEIGHT, 0, 0, monthName, &Font24, EPD_7IN3F_BLACK, EPD_7IN3F_WHITE, true, true);
     printf("EPD DISPLAY\r\n");
     EPD_7IN3F_Display(BlackImage);
     DEV_Delay_ms(3000);
