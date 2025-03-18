@@ -10,7 +10,10 @@
  */
 
 #include <timedateservice.h>
-#include "displayservice.h"
+extern "C" {
+    #include <waveshare_eink.h>
+}
+
 
 
 
@@ -26,9 +29,6 @@ int main(int, char**){
 std::cout << "epd7in3f defined \n";
 #endif
 
-
-   
-
 #ifdef RPI
 std::cout << "RPI defined \n";
 #endif
@@ -38,26 +38,9 @@ std::cout << "RPI defined \n";
 
     printf("e-Paper Init and Clear...\r\n");
     EPD_7IN3F_Init();
-    printf("blackImage...\r\n");
-    UBYTE *BlackImage;
-UDOUBLE Imagesize = ((EPD_7IN3F_WIDTH % 2 == 0)? (EPD_7IN3F_WIDTH / 2 ): (EPD_7IN3F_WIDTH / 2 + 1)) * EPD_7IN3F_HEIGHT;
-if((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
-    printf("Failed to apply for black memory...\r\n");
-    return -1;
-};
-    printf("Paint_NewImage\r\n");
-    Paint_NewImage(BlackImage, EPD_7IN3F_WIDTH, EPD_7IN3F_HEIGHT, 0, EPD_7IN3F_WHITE);
-    Paint_SetScale(7);
-    printf("Paint_SelectImage\r\n");
-    Paint_SelectImage(BlackImage);
-    printf("Paint_Clear\r\n");
-    Paint_Clear(EPD_7IN3F_WHITE);
-    printf("Paint_draw\r\n");
-    paint_box_grid(DOW_WIDTH, DOW_HEIGHT, DOW_COLUMNS, DOW_ROWS, 0,DOW_GRID_Y_OFFSET);
-    printf("EPD DISPLAY\r\n");
-    EPD_7IN3F_Display(BlackImage);
-    DEV_Delay_ms(3000);
-
+    EPD_7IN3F_Clear(EPD_7IN3F_ORANGE);
+    std::cout << output << "\n";
+    std::cout << output << "\n";
     EPD_7IN3F_Sleep();
     return 0;
 }
