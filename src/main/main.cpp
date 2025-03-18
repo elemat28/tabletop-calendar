@@ -53,12 +53,7 @@ if((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
     printf("Paint_Clear\r\n");
     Paint_Clear(EPD_7IN3F_WHITE);
     printf("Paint_draw\r\n");
-<<<<<<< HEAD
     paint_box_grid(DOW_WIDTH, DOW_HEIGHT, DOW_COLUMNS, DOW_ROWS, 0,DOW_GRID_Y_OFFSET);
-=======
-    paint_month_grid(DOW_WIDTH, DOW_HEIGHT, DOW_COLUMNS, DOW_ROWS, 0,DOW_GRID_Y_OFFSET);
-    paint_month_grid_header(DOW_WIDTH, DOW_HEIGHT/2,0,DOW_GRID_Y_OFFSET, &Font24, EPD_7IN3F_WHITE, EPD_7IN3F_BLACK, true);
->>>>>>> a62b15d (display monthly calendar grid on EPD_7in3f)
     printf("EPD DISPLAY\r\n");
     EPD_7IN3F_Display(BlackImage);
     DEV_Delay_ms(3000);

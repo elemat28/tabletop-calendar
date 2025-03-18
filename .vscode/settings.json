@@ -70,12 +70,7 @@
         "epd_test.h": "c",
         "layout_epd_7in3f_monthly.h": "c",
         "waveshare_eink.h": "c",
-<<<<<<< HEAD
         "time.h": "c"
-=======
-        "time.h": "c",
-        "gui_paint.h": "c"
->>>>>>> a62b15d (display monthly calendar grid on EPD_7in3f)
     },
     "C_Cpp.default.compilerPath": "/usr/bin/aarch64-linux-gnu-g++",
 

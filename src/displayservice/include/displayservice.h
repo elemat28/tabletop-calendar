@@ -17,9 +17,4 @@ struct paintcursor
 
 
 int display_init();
-<<<<<<< HEAD
 void paint_box_grid(uint16_t boxWidthPX, uint16_t boxHeightPX, int columns, int rows, uint16_t startX, uint16_t startY);
-=======
-void paint_month_grid(uint16_t boxWidthPX, uint16_t boxHeightPX, int columns, int rows, uint16_t startX, uint16_t startY);
-void paint_month_grid_header(uint16_t boxWidthPX, uint16_t boxHeightPX, uint16_t startX, uint16_t startY, sFONT *Font, uint16_t Color_Foreground, uint16_t Color_Background, bool centerText);
->>>>>>> a62b15d (display monthly calendar grid on EPD_7in3f)
