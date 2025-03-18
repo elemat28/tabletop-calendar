@@ -67,7 +67,11 @@
         "cassert": "cpp",
         "stdio.h": "c",
         "bcm2835.h": "c",
-        "epd_test.h": "c"
+        "epd_test.h": "c",
+        "layout_epd_7in3f_monthly.h": "c",
+        "waveshare_eink.h": "c",
+        "time.h": "c",
+        "gui_paint.h": "c"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/aarch64-linux-gnu-g++",
 
