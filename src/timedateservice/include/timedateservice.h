@@ -1,3 +1,5 @@
+#ifndef TDS_H
+#define TDS_H
 #include <iostream>
 #include <ctime>
 
@@ -18,3 +20,5 @@ void timestamp_as_HHMMSS(char* charArr, time_t* timestamp, bool militaryFormat);
 int day_of_the_week(time_t* timestamp);
 int month_of_year(time_t* timestamp);
 int len_of_month(time_t* timestamp);
+
+#endif
