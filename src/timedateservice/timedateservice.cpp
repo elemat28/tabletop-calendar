@@ -65,3 +65,50 @@ void timestamp_as_DDMMYYYY(char* charArr, time_t* timestamp){
     strftime(charArr, 10, "%d/%m/%Y", &datetime);
 }
 
+/**
+ * @brief Returns day of week for the given timestmap 
+ * 
+ * @param timestamp 
+ * @return int 0-6, 0 = Sunday, 1 = Monday, 6 = Saturday
+ */
+int day_of_the_week(time_t* timestamp){
+    struct tm datetime = *localtime(timestamp);
+     return datetime.tm_wday;
+};
+
+/**
+ * @brief Returns month of the year for the given timestmap 
+ * 
+ * @param timestamp 
+ * @return int 0-11, 0 = January 
+ */
+int month_of_year(time_t* timestamp){
+    struct tm datetime = *localtime(timestamp);
+     return datetime.tm_mon;
+};
+
+/**
+ * @brief finds out how many days in the month of the passed timestamp
+ * 
+ * As this information is not stated as part of tm struct, it needs to be calculated 
+ * it's done by creating a new tm from timestamp passed as arg, updating the tm to first day of the next month
+ * and then creating a timestamp from the new tm and taking away 1 day of seconds from that time stamp which gets us to last day of the current month
+ * 
+ * @param timestamp 
+ * @return int 0-31, accounts for leap years/months 
+ */
+int len_of_month(time_t* timestamp){
+    struct tm datetime = *localtime(timestamp);
+    if(datetime.tm_mon == 11){
+        datetime.tm_year +=1;
+        datetime.tm_mon = 0;
+    } else {
+        datetime.tm_mon += 1;
+    };
+    datetime.tm_mday = 1;
+    const time_t stamp_day_before = mktime(&datetime) - 60*60*24;
+
+    datetime = *localtime(&stamp_day_before);
+    return datetime.tm_mday;
+
+};
