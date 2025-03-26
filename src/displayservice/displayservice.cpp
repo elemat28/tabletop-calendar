@@ -1,7 +1,7 @@
 /**
- * @file timedateservice.c
+ * @file displayservice.cpp
  * @author Mateusz M
- * @brief This library provides convinience functions for getting time, date and related
+ * @brief This library provides convinience functions for displaying things on the e-ink display
  * @version 0.1
  * @date 2025-03-14
  * 

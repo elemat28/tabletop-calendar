@@ -33,3 +33,5 @@
 
 out/
 build/
+docs/html
+docs/latex

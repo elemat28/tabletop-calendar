@@ -8,7 +8,7 @@ This project aims to recreate the simplicity and convinience of the small paper 
 ### Core features
 The project has only just started its developement, as a result most of the features have yet to be implemented
 
-- [ ] E-ink display support
+- [x] E-ink display support
 - [ ] Yearly calendar
 - [ ] Monthly calendar 
 - [ ] Clock
